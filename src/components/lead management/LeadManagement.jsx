@@ -103,7 +103,7 @@ export default function LeadManagement() {
     // Add custom styles for SweetAlert
     const style = document.createElement("style");
     style.innerHTML = `
-    .swal2-input, .swal2-select, .swal2-file {
+    . bg-[#F8F8F8] rounded-md py-2 px-4 outline-none, .swal2-select, .swal2-file {
       width: 100% !important;
       margin: 0 !important;
       padding: 0.5rem !important;
@@ -205,41 +205,41 @@ export default function LeadManagement() {
   // "Add Client" button click
   const handleAddClientClick = () => {
     Swal.fire({
-      title: "Add Client",
-      html: `
-    
-      <form id="clientForm" class="text-left">
+      html: `    
+      <form id="clientForm" class="text-left ">
+      <div class="font-bold py-4 text-[20px]">Add Client</div>
         <div class="mb-3">
           <label class="block text-sm font-medium text-gray-700 mb-1">Client Name *</label>
-          <input id="clientName" class="swal2-input w-full" placeholder="Enter client name" required>
+          <input id="clientName" class=" w-full bg-[#F8F8F8] rounded-md py-2 px-4 outline-none text-[15px]" placeholder="Full Name" required>
         </div>
         
        <div class="flex justify-between w-full ">
         <div class="mb-3">
           <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-          <input id="clientEmail" type="email" class="swal2-input w-full" placeholder="Enter email" required>
+          <input id="clientEmail" type="email" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none text-[15px] w-full" placeholder="Enter email" required>
         </div>
         
         <div class="mb-3">
           <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-          <input id="clientPhone" class="swal2-input w-full" placeholder="Enter phone number" required>
+          <input id="clientPhone" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full text-[15px]" placeholder="Enter phone number" required>
         </div>
        </div>
         
        <div class="flex justify-between w-full ">
         <div class="mb-3">
           <label class="block text-sm font-medium text-gray-700 mb-1">Business Name *</label>
-          <input id="businessName" class="swal2-input w-full" placeholder="Enter business name" required>
+          <input id="businessName" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full text-[15px]" placeholder="Enter business name" required>
         </div>
         
         <div class="mb-3">
           <label class="block text-sm font-medium text-gray-700 mb-1">Industry Type *</label>
-          <input id="industryType" class="swal2-input w-full" placeholder="Enter industry type" required>
+          <input id="industryType" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full text-[15px]" placeholder="Enter industry type" required>
         </div>
        </div>
         <div class="mb-3">
           <label class="block text-sm font-medium text-gray-700 mb-1">Status *</label>
-          <select id="clientStatus" class="swal2-select w-full">
+          <select id="clientStatus"class="bg-[#F8F8F8] text-[15px]  rounded-md py-2 px-4 outline-none w-[200px] text-[15px]">
+          <option value="Select Status" disable class="px-4 " >Select Status</option>
             <option value="Received">Received</option>
             <option value="Processing">Processing</option>
             <option value="Closed">Closed</option>
@@ -248,29 +248,29 @@ export default function LeadManagement() {
         </div>
         <div class="space-y-2">
         <div>Description</div>
-        <textarea id="clientDescription"  class="w-full bg-[#F8F8F8] outline-none h-[80px]" placeholder="Enter description"></textarea>
+        <textarea id="clientDescription"  class="w-full text-[15px] bg-[#F8F8F8] outline-none h-[80px]" placeholder="Enter description"></textarea>
         </div>
         <div class="mb-3 ">
           <label class="block text-sm font-medium text-gray-700 mb-1">Attach Document</label>
-          <input id="clientDocument" type="file" class="w-full bg-[#F8F8F8] border-dashed border flex items-center justify-center  p-2 border-blue-400 outline-none h-[80px]">
+          <input id="clientDocument" type="file" class="w-full bg-[#F8F8F8] text-[15px] p-4 border-dashed border flex items-center justify-center   border-blue-400 outline-none h-[80px]">
         </div>
         
         <div class="flex space-x-2 mt-4">
           <div class="flex items-center">
             <label class="mr-2 text-sm font-medium text-gray-700">SEO</label>
-            <input id="seoToggle" type="checkbox" class="swal2-checkbox">
+            <input id="seoToggle" type="checkbox" class="swal2-checkbox text-[15px]">
           </div>
           
           <div class="flex items-center">
             <label class="mr-2 text-sm font-medium text-gray-700">Hosting</label>
-            <input id="hostingToggle" type="checkbox" class="swal2-checkbox">
+            <input id="hostingToggle" type="checkbox" class="swal2-checkbox text-[15px]">
           </div>
         </div>
       </form>
     `,
       showCancelButton: true,
-      confirmButtonText: "Save",
       cancelButtonText: "Cancel",
+      confirmButtonText: "Save",
       confirmButtonColor: "#2D74FF",
       cancelButtonColor: "#d33",
       width: "600px",
@@ -377,27 +377,28 @@ export default function LeadManagement() {
     const lead = leads.find((l) => l.id === leadId);
 
     Swal.fire({
-      title: "Edit Client Details",
+      // title: "Edit Client Details",
       html: `
-        <form id="editForm" class="text-left">
+      <div>asds</div>
+        <form id="editForm" class="text-left bg-red-400">
           <div class="mb-3">
             <label class="block text-sm font-medium text-gray-700 mb-1">Client Name *</label>
-            <input id="editClientName" class="swal2-input w-full" value="${
+            <input id="editClientName" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full" value="${
               lead.clientName
             }" required>
           </div>
           
-          <div class="flex justify-between w-full gap-4">
+          <div class="flex justify-between w-full gap-4 ">
             <div class="mb-3 w-1/2">
               <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-              <input id="editEmail" type="email" class="swal2-input w-full" value="${
+              <input id="editEmail" type="email" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full" value="${
                 lead.email
               }" required>
             </div>
             
             <div class="mb-3 w-1/2">
               <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-              <input id="editPhone" class="swal2-input w-full" value="${
+              <input id="editPhone" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full" value="${
                 lead.phoneNumber
               }" required>
             </div>
@@ -406,14 +407,14 @@ export default function LeadManagement() {
           <div class="flex justify-between w-full gap-4">
             <div class="mb-3 w-1/2">
               <label class="block text-sm font-medium text-gray-700 mb-1">Business Name *</label>
-              <input id="editBusiness" class="swal2-input w-full" value="${
+              <input id="editBusiness" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full" value="${
                 lead.businessName
               }" required>
             </div>
             
             <div class="mb-3 w-1/2">
               <label class="block text-sm font-medium text-gray-700 mb-1">Industry Type *</label>
-              <input id="editIndustry" class="swal2-input w-full" value="${
+              <input id="editIndustry" class=" bg-[#F8F8F8] rounded-md py-2 px-4 outline-none w-full" value="${
                 lead.industryType
               }" required>
             </div>
@@ -608,26 +609,30 @@ export default function LeadManagement() {
   };
 
   return (
-    <div className="flex    h-screen">
-      <div className="bg-[#1D1D42] w-[18%]   text-white h-screen space-y-4">
-        <div className="flex  items-center gap-6 text-white p-4 ">
-          <img src="/logo.png" alt="" className="w-[50px] h-[55px]" />
-          <div>Infotech Clinic</div>
+    <div className="flex flex-col lg:flex-row min-h-screen">
+      <div className="bg-[#1D1D42] w-full lg:w-[18%] text-white min-h-screen space-y-4">
+        <div className="flex items-center gap-6 text-white p-4">
+          <img
+            src="/logo.png"
+            alt=""
+            className="w-[40px] lg:w-[50px] h-[45px] lg:h-[55px]"
+          />
+          <div className="text-sm lg:text-base">Infotech Clinic</div>
           <div className="-rotate-90">
             <BiSolidBarChartAlt2 />
           </div>
         </div>
-        <div className="space-y-4">
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+        <div className="space-y-2 lg:space-y-4">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <MdDashboard />
             <div>Dashboard</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <FaCirclePlus />
             <div>Lead Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
-            <div className="relative  ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
+            <div className="relative">
               <BsBarChartFill />
               <div className="absolute top-[-8px] left-[-3px]">
                 <IoTrendingUp />
@@ -635,68 +640,68 @@ export default function LeadManagement() {
             </div>
             <div>Sales Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <FaUsers />
             <div>User Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <GiCash />
             <div>Finance Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <FaChartPie />
             <div>Analytics</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <FaTasks />
             <div>Task Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <TbInvoice />
             <div>Invoice</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <FaLock />
             <div>Data Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <IoLocationSharp />
             <div>Track Management</div>
           </div>
-          <div className="flex gap-2 items-center text-12 cursor-pointer hover:bg-[#27274F] px-4 py-2 ">
+          <div className="flex gap-2 items-center text-11 lg:text-12 cursor-pointer hover:bg-[#27274F] px-3 lg:px-4 py-2">
             <IoSettings />
             <div>Setting</div>
           </div>
         </div>
       </div>
-      <div className=" w-full ">
-        <div className="flex justify-between items-center border-b-2 py-2 border-gray-200 p-6 ">
-          <div className="text-[22px] font-semibold">Lead Management</div>
-          <div className="flex gap-2 items-center text-[18px] text-gray-500">
-            <div className="text-[25px]">
+      <div className="w-full">
+        <div className="flex flex-col md:flex-row justify-between items-center border-b-2 py-2 border-gray-200 p-4 lg:p-6">
+          <div className="text-[18px] lg:text-[22px] font-semibold mb-2 md:mb-0">
+            Lead Management
+          </div>
+          <div className="flex gap-2 items-center text-[16px] lg:text-[18px] text-gray-500">
+            <div className="text-[22px] lg:text-[25px]">
               <IoIosNotifications />
             </div>
             <div>User Name</div>
             <IoIosArrowDown />
           </div>
         </div>
-        <div className="py-2 flex  justify-between items-center p-6">
-          {/* Searchbar  */}
-
-          <div className="relative">
+        <div className="py-2 flex flex-col md:flex-row justify-between items-center p-4 lg:p-6 space-y-2 md:space-y-0">
+          <div className="relative w-full md:w-auto">
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search by ID or Name"
-              className="border-2 py-1 px-7 border-gray-200 rounded-md w-[300px] outline-none"
+              className="border-2 py-1 px-7 border-gray-200 rounded-md w-full md:w-[300px] outline-none"
             />
             <div className="absolute top-[7px] left-[8px] text-gray-500 text-[20px]">
               <CiSearch />
             </div>
           </div>
 
-          <tbody className="bg-white divide-y divide-gray-200"></tbody>
+          <div className="bg-white divide-y divide-gray-200"></div>
 
           <div
             onClick={handleAddClientClick}
@@ -706,40 +711,40 @@ export default function LeadManagement() {
             Add Client
           </div>
         </div>
-        <div className="p-6 bg-[#F8F8F8] h-[601px] overflow-hidden">
-          <div className="overflow-x-auto rounded-md bg-white h-[510px]  p-6">
+        <div className="p-4 lg:p-6 bg-[#F8F8F8] h-[calc(100vh-200px)] overflow-hidden">
+          <div className="overflow-x-auto rounded-md bg-white h-[calc(100%-60px)] p-4 lg:p-6">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-white">
                 <tr>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Date
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     ID
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Client Name
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Phone Number
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Business Name
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Industry Type
                   </th>
-                  <th className="px-4 flex items-center gap-1 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 flex items-center gap-1 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Status
                     <IoIosArrowDown />
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     SEO
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Hosting
                   </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  <th className="px-2 lg:px-4 py-2 text-left text-xs lg:text-sm font-medium text-gray-700">
                     Action
                   </th>
                 </tr>
@@ -747,15 +752,25 @@ export default function LeadManagement() {
               <tbody className="bg-white divide-y divide-gray-200">
                 {leads.map((lead) => (
                   <tr key={lead.id} className="hover:bg-gray-50">
-                    <td className="px-4 py-2">{lead.date}</td>
-                    <td className="px-4 py-2 text-blue-600 font-medium">
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm">
+                      {lead.date}
+                    </td>
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm text-blue-600 font-medium">
                       {lead.id}
                     </td>
-                    <td className="px-4 py-2">{lead.clientName}</td>
-                    <td className="px-4 py-2">{lead.phoneNumber}</td>
-                    <td className="px-4 py-2">{lead.businessName}</td>
-                    <td className="px-4 py-2">{lead.industryType}</td>
-                    <td className="px-4 py-2">
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm">
+                      {lead.clientName}
+                    </td>
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm">
+                      {lead.phoneNumber}
+                    </td>
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm">
+                      {lead.businessName}
+                    </td>
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm">
+                      {lead.industryType}
+                    </td>
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm">
                       <span
                         className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusBadgeClass(
                           lead.status
@@ -764,22 +779,21 @@ export default function LeadManagement() {
                         {lead.status}
                       </span>
                     </td>
-                    <td className="px-4 py-2">
+                    <td className="px-2 lg:px-4 py-2">
                       <Toggle
                         isChecked={lead.seo}
                         onChange={handleSeoToggle}
                         id={lead.id}
                       />
                     </td>
-                    <td className="px-4 py-2">
+                    <td className="px-2 lg:px-4 py-2">
                       <Toggle
                         isChecked={lead.hosting}
                         onChange={handleHostingToggle}
                         id={lead.id}
                       />
                     </td>
-
-                    <td className="px-4 py-2 text-sm text-gray-500 relative">
+                    <td className="px-2 lg:px-4 py-2 text-xs lg:text-sm text-gray-500 relative">
                       <button
                         onClick={() => toggleActionMenu(lead.id)}
                         className="p-1 rounded-full hover:bg-gray-100 focus:outline-none"
